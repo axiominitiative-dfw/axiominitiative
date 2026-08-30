@@ -1,0 +1,950 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Axiom Initiative | Mathematics Education & Competition</title>
+
+  <meta
+    name="description"
+    content="Axiom Initiative provides math education, competition preparation, mock tests, and learning opportunities for students in grades 3-8."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ---------- Header ---------- */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 21px;
+      color: #173b72;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 15px;
+      font-weight: 600;
+      color: #374151;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .nav-button {
+      background: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+
+    .nav-button:hover {
+      color: white;
+      background: #1d4ed8;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #eef2ff 100%);
+      padding: 90px 24px 100px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.05;
+      color: #173b72;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .button-secondary {
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #173b72;
+    }
+
+    .button-secondary:hover {
+      background: #f8fafc;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(30, 64, 175, 0.12);
+      border: 1px solid #e5e7eb;
+    }
+
+    .math-symbols {
+      font-size: 76px;
+      text-align: center;
+      color: #2563eb;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .hero-card h3 {
+      text-align: center;
+      color: #173b72;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .hero-card p {
+      text-align: center;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* ---------- General Sections ---------- */
+
+    section {
+      padding: 85px 24px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #173b72;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      max-width: 700px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+    /* ---------- About ---------- */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 350px;
+      border-radius: 18px;
+      background:
+        linear-gradient(rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.08)),
+        url("images/about-math.jpg") center/cover;
+    }
+
+    .about-content h3 {
+      color: #173b72;
+      font-size: 29px;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: #4b5563;
+      margin-bottom: 17px;
+    }
+
+    /* ---------- Mission ---------- */
+
+    .mission {
+      background: #f8fafc;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .mission-card {
+      background: white;
+      padding: 32px 27px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .mission-icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .mission-card h3 {
+      color: #173b72;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .mission-card p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    /* ---------- Programs ---------- */
+
+    .programs {
+      background: white;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .program-card {
+      padding: 32px;
+      border-radius: 14px;
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+    }
+
+    .program-card h3 {
+      color: #173b72;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .program-card p {
+      color: #4b5563;
+    }
+
+    /* ---------- Events ---------- */
+
+    .events {
+      background: #f8fafc;
+    }
+
+    .event-card {
+      display: grid;
+      grid-template-columns: 130px 1fr auto;
+      gap: 25px;
+      align-items: center;
+      background: white;
+      padding: 25px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .event-date {
+      text-align: center;
+      background: #2563eb;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .event-date strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .event-date span {
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .event-info h3 {
+      color: #173b72;
+      margin-bottom: 5px;
+    }
+
+    .event-info p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .event-button {
+      background: #173b72;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* ---------- Gallery ---------- */
+
+    .gallery {
+      background: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      height: 250px;
+      border-radius: 13px;
+      overflow: hidden;
+      background: #e5e7eb;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ---------- CTA ---------- */
+
+    .cta {
+      background: #173b72;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #dbeafe;
+    }
+
+    .cta .button {
+      background: white;
+      color: #173b72;
+    }
+
+    /* ---------- Footer ---------- */
+
+    footer {
+      background: #0f274c;
+      color: #cbd5e1;
+      padding: 35px 24px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .footer-brand {
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    /* ---------- Mobile ---------- */
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-card {
+        grid-template-columns: 90px 1fr;
+      }
+
+      .event-button {
+        grid-column: 2;
+        width: fit-content;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 65px 20px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-card {
+        grid-template-columns: 1fr;
+      }
+
+      .event-button {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="navbar">
+
+      <a href="#home" class="logo">
+        <!-- Replace with your actual logo -->
+        <img src="images/logo.png" alt="Axiom Initiative Logo">
+        <span>Axiom Initiative</span>
+      </a>
+
+      <nav>
+        <a href="#about">About Us</a>
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="nav-button">Get Involved</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-container">
+
+        <div>
+          <h1>
+            Inspiring the next generation of
+            <span>math thinkers.</span>
+          </h1>
+
+          <p>
+            Axiom Initiative empowers students in grades 3–8 through
+            engaging mathematics education, competition preparation,
+            and opportunities to challenge themselves.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#events" class="button button-primary">
+              Explore Events
+            </a>
+
+            <a href="#about" class="button button-secondary">
+              Learn About Us
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="math-symbols">∑ π ∞</div>
+
+          <h3>Think. Solve. Grow.</h3>
+
+          <p>
+            Building confidence and problem-solving skills
+            through mathematics.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= ABOUT US ================= -->
+
+    <section class="about" id="about">
+      <div class="section-container">
+
+        <div class="section-heading">
+          <h2>About Us</h2>
+          <p>
+            Creating meaningful opportunities for young students
+            to discover the power and excitement of mathematics.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-image">
+            <!-- Replace images/about-math.jpg with your photo -->
+          </div>
+
+          <div class="about-content">
+
+            <h3>Making Mathematics Accessible & Exciting</h3>
+
+            <p>
+              Axiom Initiative is a nonprofit organization dedicated
+              to supporting mathematics learning for students in
+              grades 3 through 8.
+            </p>
+
+            <p>
+              We organize competition math mock tests, educational
+              activities, and learning opportunities that help
+              students strengthen their mathematical thinking,
+              problem-solving abilities, and confidence.
+            </p>
+
+            <p>
+              Our goal is to create a positive environment where
+              students can challenge themselves, learn from mistakes,
+              and develop a lifelong appreciation for mathematics.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= MISSION ================= -->
+
+    <section class="mission" id="mission">
+      <div class="section-container">
+
+        <div class="section-heading">
+          <h2>Our Mission</h2>
+          <p>
+            We believe every student deserves the opportunity to
+            experience the joy and challenge of mathematics.
+          </p>
+        </div>
+
+        <div class="mission-grid">
+
+          <div class="mission-card">
+            <div class="mission-icon">🧠</div>
+            <h3>Build Critical Thinking</h3>
+            <p>
+              Encourage students to think logically, creatively,
+              and confidently when solving challenging problems.
+            </p>
+          </div>
+
+          <div class="mission-card">
+            <div class="mission-icon">🏆</div>
+            <h3>Promote Competition</h3>
+            <p>
+              Provide opportunities for students to practice,
+              compete, and prepare for mathematics competitions.
+            </p>
+          </div>
+
+          <div class="mission-card">
+            <div class="mission-icon">🌱</div>
+            <h3>Grow Confidence</h3>
+            <p>
+              Help students develop perseverance and confidence
+              through meaningful mathematical challenges.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= PROGRAMS ================= -->
+
+    <section class="programs" id="programs">
+      <div class="section-container">
+
+        <div class="section-heading">
+          <h2>What We Do</h2>
+          <p>
+            Programs designed to make learning mathematics engaging,
+            challenging, and rewarding.
+          </p>
+        </div>
+
+        <div class="program-grid">
+
+          <div class="program-card">
+            <h3>Competition Math Mock Tests</h3>
+            <p>
+              Practice tests designed to give students experience
+              with competition-style mathematics problems and
+              time-based problem solving.
+            </p>
+          </div>
+
+          <div class="program-card">
+            <h3>Grades 3–8 Math Education</h3>
+            <p>
+              Learning opportunities that strengthen mathematical
+              foundations while encouraging students to explore
+              concepts beyond the standard classroom curriculum.
+            </p>
+          </div>
+
+          <div class="program-card">
+            <h3>Problem-Solving Workshops</h3>
+            <p>
+              Interactive sessions focused on mathematical reasoning,
+              creative approaches, and strategies for solving
+              challenging problems.
+            </p>
+          </div>
+
+          <div class="program-card">
+            <h3>Student Enrichment</h3>
+            <p>
+              Activities that encourage curiosity, collaboration,
+              perseverance, and a positive attitude toward learning.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= EVENTS ================= -->
+
+    <section class="events" id="events">
+      <div class="section-container">
+
+        <div class="section-heading">
+          <h2>Upcoming Events</h2>
+          <p>
+            Join our upcoming math learning and competition
+            preparation opportunities.
+          </p>
+        </div>
+
+
+        <!-- Event 1 -->
+        <div class="event-card">
+
+          <div class="event-date">
+            <strong>15</strong>
+            <span>Oct 2026</span>
+          </div>
+
+          <div class="event-info">
+            <h3>Competition Math Mock Test</h3>
+            <p>
+              Grades 3–8 • Practice competition • Problem-solving
+              challenge
+            </p>
+          </div>
+
+          <a href="#" class="event-button">
+            Learn More
+          </a>
+
+        </div>
+
+
+        <!-- Event 2 -->
+        <div class="event-card">
+
+          <div class="event-date">
+            <strong>07</strong>
+            <span>Nov 2026</span>
+          </div>
+
+          <div class="event-info">
+            <h3>Math Problem-Solving Workshop</h3>
+            <p>
+              Grades 3–8 • Interactive learning • Math strategies
+            </p>
+          </div>
+
+          <a href="#" class="event-button">
+            Learn More
+          </a>
+
+        </div>
+
+
+        <!-- Event 3 -->
+        <div class="event-card">
+
+          <div class="event-date">
+            <strong>12</strong>
+            <span>Dec 2026</span>
+          </div>
+
+          <div class="event-info">
+            <h3>Axiom Math Challenge</h3>
+            <p>
+              Grades 3–8 • Mathematics competition • Student challenge
+            </p>
+          </div>
+
+          <a href="#" class="event-button">
+            Learn More
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section class="gallery" id="gallery">
+      <div class="section-container">
+
+        <div class="section-heading">
+          <h2>Photo Gallery</h2>
+          <p>
+            Highlights from our math learning activities,
+            workshops, and community events.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img
+              src="images/gallery-1.jpg"
+              alt="Students participating in a math activity"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/gallery-2.jpg"
+              alt="Students working on mathematics problems"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/gallery-3.jpg"
+              alt="Math competition activity"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/gallery-4.jpg"
+              alt="Students learning mathematics"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/gallery-5.jpg"
+              alt="Students participating in a workshop"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/gallery-6.jpg"
+              alt="Axiom Initiative math event"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= CALL TO ACTION ================= -->
+
+    <section class="cta" id="contact">
+      <div class="section-container">
+
+        <h2>Help Us Inspire Young Mathematicians</h2>
+
+        <p>
+          Whether you are a student, parent, educator, volunteer,
+          or community supporter, there is a place for you at
+          Axiom Initiative.
+        </p>
+
+        <a href="mailto:info@axiominitiative.org" class="button">
+          Contact Axiom Initiative
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    <div class="footer-container">
+
+      <div>
+        <div class="footer-brand">Axiom Initiative</div>
+        <div>
+          Mathematics Education • Grades 3–8
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:25px; font-size:13px;">
+      © 2026 Axiom Initiative. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
+```
