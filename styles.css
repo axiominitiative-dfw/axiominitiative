@@ -248,6 +248,17 @@
       margin-bottom: 17px;
     }
 
+   .about-container {
+     background: linear-gradient(
+       135deg,
+       #eff6ff 0%,
+       #f8fafc 100%
+     );
+     padding: 40px 24px;
+     border-radius: 16px;
+     margin-bottom: 30px;
+   }
+
     /* ---------- Mission ---------- */
 
     .mission {
