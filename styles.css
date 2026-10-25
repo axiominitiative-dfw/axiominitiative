@@ -190,7 +190,7 @@
     /* ---------- General Sections ---------- */
 
     section {
-      padding: 85px 24px;
+      padding: 25px 25px;
     }
 
     .section-container {
@@ -200,13 +200,13 @@
 
     .section-heading {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
 
     .section-heading h2 {
       font-size: 38px;
       color: #173b72;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
 
     .section-heading p {
@@ -254,9 +254,9 @@
        #eff6ff 0%,
        #f8fafc 100%
      );
-     padding: 40px 24px;
+     padding: 20px 24px;
      border-radius: 16px;
-     margin-bottom: 30px;
+     margin-bottom: 10px;
    }
 
     /* ---------- Mission ---------- */
