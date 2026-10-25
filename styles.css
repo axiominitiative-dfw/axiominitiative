@@ -26,6 +26,52 @@
       display: block;
     }
 
+   /* Hamburger menu button */
+   .menu-toggle {
+     display: none;
+     background: #2563eb;
+     color: white;
+     border: none;
+     border-radius: 6px;
+     padding: 8px 12px;
+     font-size: 24px;
+     cursor: pointer;
+   }
+   
+   /* Mobile navigation */
+   @media (max-width: 850px) {
+     .navbar {
+       position: relative;
+       flex-wrap: wrap;
+     }
+   
+     .menu-toggle {
+       display: block;
+     }
+   
+     .navbar nav {
+       display: none;
+       flex-direction: column;
+       align-items: stretch;
+       gap: 0;
+       width: 100%;
+       padding-top: 12px;
+     }
+   
+     .navbar nav.open {
+       display: flex;
+     }
+   
+     .navbar nav a {
+       padding: 12px;
+     }
+   
+     .navbar nav .nav-button {
+       text-align: center;
+       margin-top: 6px;
+     }
+}
+
     /* ---------- Header ---------- */
 
     header {
