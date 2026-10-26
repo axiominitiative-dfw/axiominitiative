@@ -20,25 +20,21 @@
       Axiom Initiative
      </span>
     </a>
-    <nav>
-     <a href="about.html">
-      About Us
-     </a>
-     <a href="mission.html">
-      Mission
-     </a>
-     <a href="program.html">
-      Programs
-     </a>
-     <a href="events.html">
-      Events
-     </a>
-     <a href="gallery.html">
-      Gallery
-     </a>
-     <a class="nav-button" href="contact.html">
-      Get Involved
-     </a>
+    <button class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="main-nav">
+      ☰
+    </button>
+    
+    <nav id="main-nav">
+      <a href="about.html">About Us</a>
+      <a href="mission.html">Mission</a>
+      <a href="program.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-button">Get Involved</a>
     </nav>
    </div>
   </header>
@@ -124,5 +120,17 @@
     © 2026 Axiom Initiative. All rights reserved.
    </div>
   </footer>
+
+  	<script>
+     const menuToggle = document.getElementById('menu-toggle');
+     const mainNav = document.getElementById('main-nav');
+   
+     menuToggle.addEventListener('click', () => {
+       const isOpen = mainNav.classList.toggle('open');
+       menuToggle.setAttribute('aria-expanded', isOpen);
+       menuToggle.textContent = isOpen ? '✕' : '☰';
+     });
+   </script>
+  
  </body>
 </html>
