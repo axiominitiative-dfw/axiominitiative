@@ -598,4 +598,55 @@
         height: 320px;
     }
 }
+
+
+/* Align About Us content with the hero section */
+#about .about-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* Match the About Us grid to the same outer width */
+#about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Prevent the image and content from overflowing their columns */
+#about .about-grid > .about-image,
+#about .about-grid > .about-content {
+    min-width: 0;
+}
+
+/* Ensure the image fills its column */
+#about .about-grid > .about-image {
+    width: 100%;
+    margin: 0;
+    min-height: 350px;
+    background:
+        linear-gradient(rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.08)),
+        url("images/MathletesPhoto.JPG") center/cover no-repeat;
+}
+
+/* Match the leaders section's outer width */
+#leaders .hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+    #about .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
   
