@@ -674,4 +674,38 @@
     white-space: nowrap;
 }
 
+/* Event Gallery Sections */
+
+.event-gallery {
+    margin-bottom: 55px;
+}
+
+.event-gallery-heading {
+    margin-bottom: 25px;
+    padding: 18px 22px;
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+}
+
+.event-gallery-heading h3 {
+    color: #173b72;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.event-gallery-heading p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* Photo Titles */
+
+.gallery-item h4 {
+    padding: 14px 10px;
+    text-align: center;
+    color: #173b72;
+    font-size: 17px;
+}
+
   
